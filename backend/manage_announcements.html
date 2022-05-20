@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UPDATE/ADD Announcements</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="manage_announcements.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+    <script src="../js/firebase.js"></script>
+    <script src="auth.js"></script>
+    <!-- Authentication -->
+</head>
+
+<body>
+    <!-- nav -->
+    <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">SRMS | Admin</a>
+
+        <ul class="navbar-nav m-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="./manage_announcements.html">Announcements</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./manage_students.html">Students</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./subject_editor.html">Config</a>
+            </li>
+        </ul>
+        <button class="btn btn-outline-info my-2 my-sm-0" onclick="log_out()">Log Out</button>
+    </nav> -->
+    <!-- end nav -->
+
+
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <!-- changed from 'lg-12' to 'lg-6' -->
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="" class="form-group" name="update_Form">
+                                <div class="row">
+                                    <div class="col-md-9 text-center">
+                                        <h4>Manage Announcements</h4>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button onclick="add_announcement()" class="btn btn-primary">ADD
+                                            ANNOUNCEMENT</button>
+                                    </div>
+                                </div> 
+                                <hr>      
+                                <div class="table-responsive">
+                                    <table id="student-table" class="table table-hover">
+                                        <thead class="text-center">
+                                            <tr>
+                                                <th>Announcement ID</th>
+                                                <th>Date</th>
+                                                <th>Topic</th>
+                                                <th>Manage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-center"
+                                            <tr>
+                                                <td id="rollnumber">A000</td>
+                                                <td>00/00/0000</td>
+                                                <td>TOPIC</td>
+                                                <td>
+                                                    <button onclick="load_details(this.id)" id="s000"
+                                                        class="btn btn-primary">EDIT</button>
+                                                    <button onclick="load_delete(this.id)" id="s000"
+                                                        class="btn btn-primary">DELETE</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="components/navbar.js"></script>
+    <script src="manage_announcements.js"></script>
+</body>
+
+</html>

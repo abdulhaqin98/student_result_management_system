@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPLAINTS</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/complaint.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- navbar -->
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- form -->
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <div class="login-form">
+                    <form onsubmit="event.preventDefault(); revaluation();">
+                        <h2 class="text-center">Revaluation</h2>
+                        <div class="form-group">
+                            <select class="form-control" name="" id="course" required="required">
+                                <option value="" disabled selected>Select Course</option>
+                                <option value="it">B.Sc (I. T.)</option>
+                                <option value="cs">B.Sc (C. S.)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="" id="semester" required="required">
+                                <option value="" disabled selected>Select Session</option>
+                                <option value="semesterone">Semester 1</option>
+                                <option value="semestertwo">Semester 2</option>
+                                <option value="semesterthree">Semester 3</option>
+                                <option value="semesterfour">Semester 4</option>
+                            </select>
+                        </div>
+                        <div class="form-group has-error">
+                            <input type="text" class="form-control" id="rollnumber" placeholder="Roll Number"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="mothername" placeholder="Mother Name"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" id="goto" class="btn btn-primary btn-lg btn-block" >Enter</button>
+                        </div>
+                    </form>
+                    <!-- <button id="btnclick" onclick="gotopath()">Click me</button> -->
+                </div>
+            </div>
+
+            <!-- news carousel -->
+            <div class="col-md-5">
+                <div class="login-form">
+                    <form onsubmit="event.preventDefault(); photocopy();">
+                        <h2 class="text-center">Photocopy</h2>
+                        <div class="form-group">
+                            <select class="form-control" name="" id="pcourse" required="required">
+                                <option value="" disabled selected>Select Course</option>
+                                <option value="it">B.Sc (I. T.)</option>
+                                <option value="cs">B.Sc (C. S.)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="" id="psemester" required="required">
+                                <option value="" disabled selected>Select Session</option>
+                                <option value="semesterone">Semester 1</option>
+                                <option value="semestertwo">Semester 2</option>
+                                <option value="semesterthree">Semester 3</option>
+                                <option value="semesterfour">Semester 4</option>
+                            </select>
+                        </div>
+                        <div class="form-group has-error">
+                            <input type="text" class="form-control" id="prollnumber" placeholder="Roll Number"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="pmothername" placeholder="Mother Name"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" id="goto" class="btn btn-primary btn-lg btn-block" >Enter</button>
+                        </div>
+                    </form>
+                    <!-- <button id="btnclick" onclick="gotopath()">Click me</button> -->
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+    <script src="components/navbar.js"></script>
+    <script src="/js/complaint.js"></script>
+</body>
+
+</html>

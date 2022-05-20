@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UPDATE/ADD Marks</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="manage_revaluation.css">
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+    <script src="../js/firebase.js"></script>
+    <script src="auth.js"></script>
+    <!-- Authentication -->
+</head>
+
+<body>
+    <!-- nav -->
+    <!-- end nav -->
+
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <!-- changed from 'lg-12' to 'lg-6' -->
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="" class="form-group" name="update_Form">
+                                <!-- onsubmit="event.preventDefault(); load_data(event);" -->
+                                <!-- <h4 class="card-title text-center">Add and remove row in table using jquery</h4> -->
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <h4>BSC IT - Manage Revaluation</h4>
+                                        <hr>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <!-- <div class="col-lg-6">
+                                        <input id="roll_number" name="roll_Number" type="text" class="form-control"
+                                            placeholder="Roll Number" required>
+                                    </div> -->
+                                    <div class="col-md-6">
+                                        <select class="form-control w-50" name="" id="semester" required="required">
+                                            <option value="0" disabled selected>Select Session</option>
+                                            <option value="semesterone">Semester 1</option>
+                                            <option value="semestertwo">Semester 2</option>
+                                            <option value="semesterthree">Semester 3</option>
+                                            <option value="semesterfour">Semester 4</option>
+                                        </select>
+                                    </div>
+                                    <!-- <div class="col-md-2"></div> -->
+                                    <div class="col-md-6 text-right">
+                                        <button onclick="load_students()" class="btn btn-primary" id="load-btn">LOAD
+                                            STUDENTS</button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <!-- <div class="row">
+                                    <div class="col-md-10 d-flex">
+                                        <input type="text" id="newRoll" class="form-control mx-2"
+                                            placeholder="ROLL NUMBER">
+                                        <input type="text" id="newName" class="form-control mx-2" placeholder="NAME">
+                                        <input type="text" id="newMom" class="form-control mx-2"
+                                            placeholder="MOTHER NAME">
+                                        <input type="text" id="newDob" class="form-control mx-2" placeholder="DOB">
+                                        <input type="text" id="newMode" class="form-control mx-2" placeholder="MODE">
+                                    </div>
+                                    <div class="col-md-2 d-flex">
+                                        <button onclick="add_students_v()" class="btn btn-primary" id="add-btn">ADD
+                                            STUDENT</button>
+                                    </div>
+                                </div>
+                                <hr> -->
+                                <div class="table-responsive">
+                                    <table id="student-table" class="table table-hover">
+                                        <thead class="text-center">
+                                            <tr>
+                                                <th>Roll Number</th>
+                                                <th>Name</th>
+                                                <th>Date</th>
+                                                <th>Pay</th>
+                                                <th>Paid</th>
+                                                <th>Status</th>
+                                                <th>Manage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td id="rollnumber">S000</td>
+                                                <td>NAME</td>
+                                                <td id="mothername">20/20/2020</td>
+                                                <td>100</td>
+                                                <td>
+                                                    <select class="form-control" id="paid" required="required">
+                                                        <option value="0" disabled selected>Select Session</option>
+                                                        <option value="notpaid">NOT PAID</option>
+                                                        <option value="paid">PAID</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select class="form-control" id="status" required="required">
+                                                        <option value="0" disabled selected>Select Session</option>
+                                                        <option value="notprocessed">NOT PROCESSED</option>
+                                                        <option value="processing">PROCESSING</option>
+                                                        <option value="processed">PROCESSED</option>
+                                                    </select>
+                                                </td>
+                                                <td class="text-right">
+                                                    <button onclick="load_details(this.id)" id="s000"
+                                                        class="btn btn-primary">UPDATE</button>
+                                                    <button onclick="load_details(this.id)" id="s000"
+                                                        class="btn btn-primary">DETAILS</button>
+                                                    <button onclick="load_delete(this.id)" id="s000"
+                                                        class="btn btn-primary">DELETE</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Modal -->
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Record Details</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body" id="modal-body">
+                                Modal body..
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="components/navbar.js"></script>
+    <script src="manage_revaluation.js"></script>
+</body>
+
+</html>

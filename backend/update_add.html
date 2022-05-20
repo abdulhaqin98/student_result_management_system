@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UPDATE/ADD Marks</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="update_add.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+    <script src="../js/firebase.js"></script>
+</head>
+
+<body>
+
+    <!-- navbar -->
+    
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="" class="form-group" name="update_Form">
+                                <!-- onsubmit="event.preventDefault(); load_data(event);" -->
+                                <!-- <h4 class="card-title text-center">Add and remove row in table using jquery</h4> -->
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <input id="roll_number" name="roll_Number" type="text" class="form-control"
+                                            placeholder="Roll Number" required>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <span>BSC IT</span>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <select class="form-control" name="" id="semester" required="required">
+                                            <option value="" disabled selected>Select Session</option>
+                                            <option value="semesterone">Semester 1</option>
+                                            <option value="semestertwo">Semester 2</option>
+                                            <option value="semesterthree">Semester 3</option>
+                                            <option value="semesterfour">Semester 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="table-responsive">
+                                    <table id="faqs" class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Subject</th>
+                                                <th>Internal</th>
+                                                <th>External</th>
+                                                <th>Practical</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <p id="s1" class="mt-2">Subject 1</p>
+                                                </td>
+                                                <td><input id="i1" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                                <td><input id="e1" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                                <td><input id="p1" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p id="s2" class="mt-2">Subject 2</p>
+                                                </td>
+                                                <td><input id="i2" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                                <td><input id="e2" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                                <td><input id="p2" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p id="s3" class="mt-2">Subject 3</p>
+                                                </td>
+                                                <td><input id="i3" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                                <td><input id="e3" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                                <td><input id="p3" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p id="s4" class="mt-2">Subject 4</p>
+                                                </td>
+                                                <td><input id="i4" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                                <td><input id="e4" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                                <td><input id="p4" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p id="s5" class="mt-2">Subject 5</p>
+                                                </td>
+                                                <td><input id="i5" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                                <td><input id="e5" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                                <td><input id="p5" type="text" class="form-control w-50" placeholder="">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <button type="submit" value="btn-load" id="btnload"
+                                            class="btn btn-primary w-100">LOAD</button>
+                                    </div>
+                                    <div class="col-lg-4"></div>
+                                    <div class="col-lg-4">
+                                        <button type="submit" value="btn-save" id="btnsave"
+                                            class="btn btn-primary w-100">SAVE</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="components/navbar.js"></script>
+    <script src="update_add.js"></script>
+</body>
+</html>

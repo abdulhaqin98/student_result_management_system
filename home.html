@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/home_carousel.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">SRMS</a>
+
+        <ul class="navbar-nav m-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="./home.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./complaint.html">Complaints</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./announcements.html">Announcements</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="#">Hall of Fame</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Time Table</a>
+            </li>
+        </ul>
+        <button class="btn btn-outline-info my-2 my-sm-0" onclick="window.location='/login.html';">Log In</button>
+    </nav> -->
+
+    <!-- navbar -->
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- form -->
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <div class="login-form">
+                    <form onsubmit="event.preventDefault(); gotopath();">
+                        <h2 class="text-center">Check your Results</h2>
+                        <div class="form-group">
+                            <select class="form-control" name="" id="course" required="required">
+                                <option value="" disabled selected>Select Course</option>
+                                <option value="it">B.Sc (I. T.)</option>
+                                <option value="cs">B.Sc (C. S.)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" name="" id="semester" required="required">
+                                <option value="" disabled selected>Select Session</option>
+                                <option value="semesterone">Semester 1</option>
+                                <option value="semestertwo">Semester 2</option>
+                                <option value="semesterthree">Semester 3</option>
+                                <option value="semesterfour">Semester 4</option>
+                            </select>
+                        </div>
+                        <div class="form-group has-error">
+                            <input type="text" class="form-control" id="rollnumber" placeholder="Roll Number"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="mothername" placeholder="Mother Name"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" id="goto" class="btn btn-primary btn-lg btn-block" >Enter</button>
+                        </div>
+                    </form>
+                    <!-- <button id="btnclick" onclick="gotopath()">Click me</button> -->
+                </div>
+            </div>
+
+            <!-- news carousel -->
+            <div class="col-md-5 col-center m-auto">
+                <div class="quick-news">
+                    <h2>Announcements</h2>
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- data-interval="false" stops auto-sliding -->
+                        <!-- Carousel indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class=""></li>
+                            <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                        </ol>
+                        <!-- Wrapper for carousel items -->
+                        <div class="carousel-inner">
+                            <div class="item carousel-item">
+                                <div class="img-box"><img src="/img/avatar.png" alt=""></div>
+                                <p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu
+                                    sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel,
+                                    semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius
+                                    nibh non aliquet.</p>
+                                <p class="overview"><b>Paula Wilson</b>, Media Analyst</p>
+                            </div>
+                            <div class="item carousel-item active">
+                                <div class="img-box"><img src="/img/avatar.png" alt=""></div>
+                                <p class="testimonial">Vestibulum quis quam ut magna consequat faucibus. Pellentesque
+                                    eget nisi a mi suscipit tincidunt. Utmtc tempus dictum risus. Pellentesque viverra
+                                    sagittis quam at mattis. Suspendisse potenti. Aliquam sit amet gravida nibh,
+                                    facilisis gravida odio.</p>
+                                <p class="overview"><b>Antonio Moreno</b>, Web Developer</p>
+                            </div>
+                            <div class="item carousel-item">
+                                <div class="img-box"><img src="/img/avatar.png" alt=""></div>
+                                <p class="testimonial">Phasellus vitae suscipit justo. Mauris pharetra feugiat ante id
+                                    lacinia. Etiam faucibus mauris id tempor egestas. Duis luctus turpis at accumsan
+                                    tincidunt. Phasellus risus risus, volutpat vel tellus ac, tincidunt fringilla massa.
+                                    Etiam hendrerit dolor eget rutrum.</p>
+                                <p class="overview"><b>Michael Holz</b>, Seo Analyst</p>
+                            </div>
+                        </div>
+                        <!-- Carousel controls -->
+                        <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+
+    <script src="components/navbar.js"></script>
+    <script src="./js/home.js"></script>
+</body>
+
+</html>

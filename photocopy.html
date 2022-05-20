@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BSC IT - Revaluation</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./css/photocopy.css">
+    <link rel="stylesheet" href="./css/loader.css">
+
+    <script src="./js/photocopy.js"></script>
+    <script src="../packages/moment.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+    <script src="../js/firebase.js"></script>
+</head>
+
+<body>
+    <div class="row justify-content-center mt-4" id="loader"></div>
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <!-- changed from 'lg-12' to 'lg-6' -->
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="" class="form-group" name="update_Form" id="check_form">
+                                <!-- onsubmit="event.preventDefault(); load_data(event);" -->
+                                <!-- <h4 class="card-title text-center">Add and remove row in table using jquery</h4> -->
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <h4 class="my-4">BSC IT - Photocopy</h4>
+                                        <!-- <hr> -->
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <!-- <div class="col-lg-6">
+                                        <input id="roll_number" name="roll_Number" type="text" class="form-control"
+                                            placeholder="Roll Number" required>
+                                    </div> -->
+                                    <!-- <div class="col-md-6">
+                                        <select class="form-control w-50" name="" id="semester" required="required">
+                                            <option value="0" disabled selected>Select Session</option>
+                                            <option value="semesterone">Semester 1</option>
+                                            <option value="semestertwo">Semester 2</option>
+                                            <option value="semesterthree">Semester 3</option>
+                                            <option value="semesterfour">Semester 4</option>
+                                        </select>
+                                    </div> -->
+                                    <!-- <div class="col-md-2"></div> -->
+                                    <!-- <div class="col-md-6 text-right">
+                                        <button onclick="load_students()" class="btn btn-primary" id="load-btn">LOAD STUDENTS</button>
+                                    </div> -->
+                                    <div class="col-md-12 text-center">
+                                        <table class="table table-striped table-bordered">
+                                            <thead>
+                                                <th>NAME</th>
+                                                <th>MOTHER NAME</th>
+                                                <th>ROLL NUMBER</th>
+                                                <th>SEMESTER</th>
+                                            </thead>
+                                            <tbody>
+                                                <td id="user-name">0</td>
+                                                <td id="user-mother">0</td>
+                                                <td id="user-roll">0</td>
+                                                <td id="user-semester">0</td>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="table-responsive">
+                                    <table id="student-table" class="table table-hover">
+                                        <thead class="text-center">
+                                            <tr>
+                                                <th>Subject Name</th>
+                                                <th>Internal [25]</th>
+                                                <th>External [75]</th>
+                                                <th>Practical [50]</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-center">
+                                            <tr>
+                                                <td id="rollnumber">
+                                                    <input type="checkbox" class="form-control">
+                                                </td>
+                                                <td>NAME</td>
+                                                <td id="mothername">NAME</td>
+                                                <td>00/00/0000</td>
+                                                <td>NONE</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-6 d-flex">
+                                        <h4>Total Fees to be Paid: &nbsp;</h4>
+                                        <h4 id="user-amount">0</h4>
+                                    </div>
+                                    <div class="col-md-6 text-right">
+                                        <button class="btn btn-primary" id="calcpay" onclick="getChecked()">Calculate Payment</button>
+                                        
+                                    </div>
+                                </div>
+                                <!-- <button class="btn btn-danger" onclick="getChecked()">Test Check</button> -->
+                            </form>
+                            <!-- <h4>show fess amount, add Apply button, on click, user get a PDF to print/download</h4> -->
+
+                            <button class="btn btn-danger" id="reset" onclick="resetform()">RESET</button>
+
+                            <button class="btn btn-danger" onclick="submitreq()" id="submitreq">Submit Requst</button>
+                            <button class="btn btn-success" onclick="printPage()" id="print" style="display: none;">Print</button>
+
+                            <!-- <button onclick="goto()">TEST</button> -->
+                            <!-- <h4>Buttons auto-generated with same IDs but with different functions </h4>
+                            <h4>Total fees..... | different font and color between text and rate</h4> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

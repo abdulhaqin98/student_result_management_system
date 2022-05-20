@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap CRUD Data Table for Database with Modal Form</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./css/result_it.css">
+    <link rel="stylesheet" href="css/loader.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+    <script src="./js/firebase.js"></script>
+    <script src="./js/result_it.js"></script>
+</head>
+
+<body>
+    <section class="content-info">
+        <div class="row justify-content-center" id="loader"></div>
+        <div class="container" id="main">
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="employee-table" class="table-striped table-hover result-point">
+                        <thead class="point-table-head">
+                            <tr>
+                                <th class="text-center">SUBJECTS</th>
+                                <th class="text-center">INTERNAL [25]</th>
+                                <th class="text-center">EXTERNAL [75]</th>
+                                <th class="text-center">PRACTICAL [50]</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+            <br><br>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table-striped table-hover result-point">
+
+                        <thead class="point-table-head">
+                            <tr>
+                                <th class="text-center">TOTAL MARKS [750]</th>
+                                <th class="text-center">RESULT</th>
+                                <th class="text-center">MODE</th>
+                                <th class="text-center">SEMESTER</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr>
+                                <td id="total-mark"> 100 </td> <!-- Total Mark -->
+                                <td id="result-status"> PASS </td> <!-- Color PASS or FAIL-->
+                                <td id="result-mode"> REGULAR </td> <!-- REGULAR or ATKT-->
+                                <td id="result-semester"> 0 </td> <!-- 0 to 4-->
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br><br>
+
+                    <table class="table-striped table-hover result-point">
+
+                        <thead class="point-table-head">
+                            <tr>
+                                <th class="text-center">NAME</th>
+                                <th class="text-center">MOTHER NAME</th>
+                                <th class="text-center">ROLL NO</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center">
+                            <tr>
+                                <td id="user-name"> John Doe </td>
+                                <td id="user-mother"> Jane Doe </td>
+                                <td id="user-roll"> 100100 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br><br>
+                    <button class="btn btn-primary" id="print" onclick="printPage()">PRINT</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

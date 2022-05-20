@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Announcement ADD/EDIT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="announcements_add.css">
+    <script src="announcements_add.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+    <script src="../js/firebase.js"></script>
+    <script src="auth.js"></script>
+    <!-- Authentication -->
+</head>
+
+<body>
+
+<!-- navbar -->
+
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <!-- changed from 'lg-12' to 'lg-6' -->
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="" class="form-group" name="update_Form">
+                                <!-- onsubmit="event.preventDefault(); load_data(event);" -->
+                                <!-- <h4 class="card-title text-center">Add and remove row in table using jquery</h4> -->
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <h4>Announcement ADD/EDIT [HTML SUPPORTED]</h4>
+                                        <hr>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <input type="text" id="news_id" class="form-control mx-2" placeholder="ID">
+                                    </div>
+                                    <div class="col-md-10 text-right">
+                                        <button onclick="load_announcement_x()" class="btn btn-primary">LOAD
+                                            DATA</button>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <input type="text" id="topic" class="form-control mx-2" placeholder="Topic">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <!-- DATE -->
+                                        <input type="date" id="datePicker" class="form-control mx-2">
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <textarea id="body" class="form-control mx-2" placeholder="Body" rows="4"
+                                            cols="50"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <button onclick="save_announcement()" class="btn btn-primary">SAVE
+                                            DATA</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="components/navbar.js"></script>
+</body>
+
+</html>
